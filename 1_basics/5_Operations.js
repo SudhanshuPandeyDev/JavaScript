@@ -1,7 +1,9 @@
+// conversion Operations example 
 let value = 3
 let negValue = -value
 console.log(negValue)
 
+// Operations example (arithmetic , subtraction , multiplication...)
 // console.log(2+2)
 // console.log(2-2)
 // console.log(2*3)
