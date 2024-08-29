@@ -12,3 +12,11 @@ console.log(coursename)
 const{coursename: cName} = course     // if you think coursename is big you can write it as cName 
 console.log(cName) 
 
+// Basic Structure in Json :
+// {
+//     "name": "Sudhanshu",
+//     "age": 20,
+//     "location": "Jaipur",
+//     "isLoggedIn": false
+// }
+  
