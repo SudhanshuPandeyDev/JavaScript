@@ -1,6 +1,7 @@
 // filter return us some values but forEach method does not return any values
 // Use Case: Use forEach when you want to perform an action for each element in the array, without needing to create a new array.
 // Use Case: Use filter when you need a new array based on certain criteria.
+// The filter() method in JavaScript is used to create a new array containing elements that meet a specific condition
 
 const myNums = [1,2,3,4,5,6,7,8,9]
 
