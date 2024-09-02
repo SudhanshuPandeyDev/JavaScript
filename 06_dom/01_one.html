@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #ffff;
+        }     
+    </style>
+</head>
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM learning on chai aur code <span style="display: none;">test text</span></h1>
+        <h1>i am heading</h1>
+        <h2>Lorem, ipsum dolor.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <input type="password" name="" id="">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<!-- console.log(document.baseURI) : run this cmd on browser console to get webiste url -->
+
+<!--  var element = document.getElementById("myDiv");
+    element.innerHTML = "<strong>Content has been changed!</strong>" -->
+
+<!-- document.getElementsByClassName("heading")
+output : HTMLCollection [h1#title.heading, title: h1#title.heading] -->
+
+<!-- document.getElementById("title").className -->         <!--getting className with id-->
+
+<!-- document.getElementById("title").getAttribute("class") -->        <!--getting className with id using getAttribute-->
+
+<!-- document.getElementById("title").setAttribute("class" , "test")  -->        <!--setting attribute class = "test" this will overwrite the class attribute if class attributes already exists-- >    
+ 
+<!-- document.getElementById("title").style.backgroundColor = "green"-->          <!--setting backgroundColor green -->    
+
+<!-- document.getElementById("title").style.padding = "30px"; -->                 <!--setting padding 30px-->
+
+<!-- document.getElementById("title").style.borderRadius = "15px"; -->            <!--to set borderRadius-->
+
+<!-- document.getElementById("title").innerText                    Gets or sets the visible text content of an element, as rendered by the browser.
+output : 'DOM learning on chai aur code' -->
+
+<!-- document.getElementById("title").textContent                  Gets or sets the content of all text nodes inside the element, including script and style elements.           
+output : 'DOM learning on chai aur code test text' -->
+
+<!-- document.getElementById("title").innerHTML                    The .innerHTML property in the DOM is used to get or set the HTML content inside an element
+'DOM learning on chai aur code <span style="display: none;">test text</span>' -->
+
+
+<!-- ********************************************************************************************************************************************************************** -->
+
+
+<!-- query selectors in DOM -->
+<!-- In the DOM, querySelector and querySelectorAll are used to select elements based on CSS selectors. -->
+
+<!-- 1. querySelector Method : Returns: The first element that matches the specified CSS selector. -->
+<!-- document.querySelector("h1") -->
+
+<!-- document.querySelector("#title") -->
+
+<!-- document.querySelector(".heading")  -->
+
+<!-- document.querySelector('[type="password"]') -->
+
+<!-- 2. querySelectorAll Method : Returns: A NodeList of all elements that match the specified CSS selector. -->
+<!-- const temp = document.querySelectorAll("ul")                  selecting elements based on indexing
+temp[0].style.color = "green" -->
+
+<!-- const temp = document.querySelectorAll("ul")                  selecting all elements  
+temp.forEach(function (l) {
+    l.style.backgroundColor = "green"
+}) -->
+
+
+<!-- ********************************************************************************************************************************************************* -->
+<!-- document.getElementByClassName("list-item") : returns an HTMLCollection we can convert it into array and use it--> 
+<!-- const tempClassList = document.getElementByClassName("list-item")
+    const myConvertedArray = Array.from(tempClassList)
+    myConvertedArray.forEach(function (li){
+        li.style.color = "orange"
+    }) -->

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom manipulation</title>
+</head>
+<body style="background-color: #212121; color: #ffff;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    // Performance Impact: Setting innerHTML can be less efficient because it involves parsing and rendering HTML, which is more resource-intensive
+    // Potential Security Risk: Using innerHTML can introduce security vulnerabilities if the content includes untrusted data, as it can lead to cross-site scripting (XSS) attacks.
+    function addLanguage(langName){
+        const li = document.createElement("li")
+        li.innerHTML = `${langName}`
+        document.querySelector(".language").appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    // this function do the same thing as upper function but in more optimized way
+    // More efficient because it directly creates a text node without the overhead of parsing HTML. This is particularly beneficial in scenarios with complex or frequent DOM manipulations.
+    // Security: Safer because it only deals with plain text, eliminating any risk of introducing unwanted HTML or scripts.
+    function addOptimizedLanguage(langName){
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").appendChild(li)
+    }
+    addOptimizedLanguage("java")
+
+    // edit values
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "Mojo"        // a bad and less optimized way to edit text
+    const newli = document.createElement("li")
+    newli.textContent = "Mojo"
+    secondLang.replaceWith(newli)
+
+    // edit values usig outerHTML
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = "<li>typescript</li>"
+
+    // remove
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+</script>
+</html>
